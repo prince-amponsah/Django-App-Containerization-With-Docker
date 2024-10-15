@@ -45,5 +45,34 @@ Once the instance is created, ssh into the it via your terminal with the command
 Make sure to give the right permission to the pem file:
  chmod 400 <~/path-to-pem-file.pem>
  ssh -i <path to your pem file> username@your-ip-address
- If you get any 
+
+lets update all the packages on the system:
+sudo yum / apt-get udpate -y
+
+Once thats done, let's install Docker
+
+sudo yum install docker -y - Linux
+
+once installations is done, remember to add this user your logged in to the Sudo User group with the following commands:
+usermod -aG ec2-user docker
+
+log out of the instance and login again to help the permissions reset and effect.
+
+Lets cloe the respository to this instance:
+
+git clone <your-github-url-for-cloning>
+
+Now start the docker daemon with the commands below
+
+systemct start docker
+
+Run a simple command to test if Docker is working:
+
+docker ps or docker images 
+
+If you get a response, then the docker daemon is running
+
+Now lets buiild our image with the following command:
+
+docker build -t <your-dockerhub-username>/name-of-app:latest .
 
