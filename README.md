@@ -139,5 +139,20 @@ docker ps
 docker images
 ```
 
+
+if the image is built successfully, run the following code to get it running and confirm it running in the browser:
+
+```bash
+docker run -t -p 8000:8000 <image-name-under-docker-images-commands>
+```
+
+Head to your browser and check the app is running:
+
+http://<your-ip-address>:8000/demo/
+
+if its running then yes, you just containerized your first django app with Docker.
+
+if its not running or any futher issues,please go through the steps and also don't hesitate to reach out if you need help.
+
 ## License
 This project is licensed under the MIT License.
